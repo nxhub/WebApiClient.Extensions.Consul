@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.0.1-Alpha</Version>
+    <Version>0.0.1</Version>
     <Authors>NXHub</Authors>
     <Company>NXHub</Company>
     <Copyright>Copyright © NXHub</Copyright>
@@ -12,21 +12,13 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>nxhub webapiclientcore consul</PackageTags>
-    <Description>为 WebApiClientCore 提供服务发现功能：
-services.AddHttpApiClient(options =&gt;
-{
-    options.ServiceName = "service_orders";
-    options.ServicePath = "/api/orders";
-    options.ConculAddress = new Uri("http://localhost:8500");
-});</Description>
+    <Description>提供 WebApiClientCore 的服务发现功能：services.AddHttpApiClient&lt;ITestApi&gt;("consul_service");</Description>
     <PackageReleaseNotes>完成初步接口。</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Consul" Version="1.6.1" />
-    <PackageReference Include="WebApiClientCore" Version="1.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.4" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
+    <PackageReference Include="WebApiClientCore" Version="1.0.4" />
+    <PackageReference Include="NXHub.Consul.AspNetCore" Version="0.0.1" />
   </ItemGroup>
 
   <ItemGroup>
