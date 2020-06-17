@@ -1,5 +1,5 @@
 # WebApiClient.Extensions.Consul
-使用 Consul 为 WebApiClientCore 提供服务发现功能。
+使用 [Consul](https://github.com/G-Research/consuldotnet) 对 [WebApiClientCore](https://github.com/dotnetcore/WebApiClient) 进行扩展，提供服务发现功能。
 
 ## 安装
 ```xml
