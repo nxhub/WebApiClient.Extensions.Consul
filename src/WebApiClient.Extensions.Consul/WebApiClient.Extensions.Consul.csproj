@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>NXHub</Authors>
     <Company>NXHub</Company>
     <Copyright>Copyright © NXHub</Copyright>
@@ -13,7 +13,7 @@
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>nxhub webapiclientcore consul</PackageTags>
     <Description>提供 WebApiClientCore 的服务发现功能：services.AddHttpApiClient&lt;ITestApi&gt;("consul_service");</Description>
-    <PackageReleaseNotes>完成初步接口。</PackageReleaseNotes>
+    <PackageReleaseNotes>修复注入BUG。</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/nxhub/WebApiClient.Extensions.Consul</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nxhub/WebApiClient.Extensions.Consul</RepositoryUrl>
   </PropertyGroup>

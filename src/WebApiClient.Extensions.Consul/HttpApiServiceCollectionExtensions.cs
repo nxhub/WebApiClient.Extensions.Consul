@@ -35,21 +35,24 @@ namespace Microsoft.Extensions.DependencyInjection
             Action<HttpApiConsulOptions, IServiceProvider> configureOptions)
             where THttpApi : class
         {
+            string name = typeof(THttpApi).FullName;
+
             services
                 .AddHttpApi()
-                .AddOptions<HttpApiConsulOptions>()
+                .AddOptions<HttpApiConsulOptions>(name)
                 .Configure(configureOptions);
 
             return services
-                .AddHttpClient(typeof(THttpApi).FullName)
+                .AddHttpClient(name)
                 .AddTypedClient((client, provider) =>
                 {
-                    IOptions<HttpApiConsulOptions> options = provider
-                        .GetRequiredService<IOptions<HttpApiConsulOptions>>();
+                    HttpApiConsulOptions options = provider
+                        .GetRequiredService<IOptionsMonitor<HttpApiConsulOptions>>()
+                        .Get(name);
 
-                    provider.ServiceDiscoveryAsync(options.Value).Wait();
+                    provider.ServiceDiscoveryAsync(options).Wait();
 
-                    return HttpApi.Create<THttpApi>(client, provider, options.Value);
+                    return HttpApi.Create<THttpApi>(client, provider, options);
                 });
         }
 
@@ -85,11 +88,14 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static IServiceCollection AddHttpApi(this IServiceCollection services)
         {
+            services.AddOptions();
             services.AddMemoryCache();
+
             services.TryAddSingleton<IXmlSerializer, XmlSerializer>();
             services.TryAddSingleton<IJsonSerializer, JsonSerializer>();
             services.TryAddSingleton<IKeyValueSerializer, KeyValueSerializer>();
             services.TryAddSingleton<IResponseCacheProvider, ResponseCacheProvider>();
+
             return services;
         }
     }
