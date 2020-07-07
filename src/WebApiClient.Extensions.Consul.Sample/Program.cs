@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WebApiClient.Extensions.Consul.Demo
+namespace WebApiClient.Extensions.Consul.Sample
 {
     public class Program
     {

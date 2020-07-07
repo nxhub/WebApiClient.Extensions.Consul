@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WebApiClient.Extensions.Consul.Demo
+namespace WebApiClient.Extensions.Consul.Sample
 {
     public class Startup
     {

@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebApiClient.Extensions.Consul.Demo": {
+    "WebApiClient.Extensions.Consul.Sample": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

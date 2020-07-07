@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApiClientCore.Attributes;
 
-namespace WebApiClient.Extensions.Consul.Demo
+namespace WebApiClient.Extensions.Consul.Sample
 {
     public interface ITestApi
     {
