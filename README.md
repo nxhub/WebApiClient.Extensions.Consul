@@ -3,7 +3,7 @@
 
 ## 安装
 ```xml
-<PackageReference Include="WebApiClient.Extensions.Consul" Version="0.0.2" />
+<PackageReference Include="WebApiClient.Extensions.Consul" Version="0.0.3" />
 ```
 
 ## 使用
