@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\nxhub.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>0.0.3</Version>
@@ -19,8 +21,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WebApiClientCore" Version="1.0.4" />
-    <PackageReference Include="NXHub.Consul.AspNetCore" Version="0.0.1" />
+    <PackageReference Include="WebApiClientCore" Version="1.0.5" />
+    <PackageReference Include="NXHub.Consul.AspNetCore" Version="0.0.2" />
   </ItemGroup>
 
   <ItemGroup>
