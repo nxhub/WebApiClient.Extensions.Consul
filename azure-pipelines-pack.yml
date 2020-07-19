@@ -14,7 +14,7 @@ variables:
 
 steps:
 
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   inputs:
     command: 'pack'
     packagesToPack: '**/WebApiClient.Extensions.Consul.csproj'
@@ -22,10 +22,12 @@ steps:
     majorVersion: '0'
     minorVersion: '1'
     patchVersion: '0'
+    verbosityPack: 'Normal'
 
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'WebApiClient.Extensions.Consul'
+    verbosityPack: 'Normal'
