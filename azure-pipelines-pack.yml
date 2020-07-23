@@ -14,6 +14,10 @@ variables:
 
 steps:
 
+- task: NuGetAuthenticate@0
+  inputs:
+    nuGetServiceConnections: 'Nuget(NXHub)'
+
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
   workingDirectory: 'src'
@@ -26,12 +30,10 @@ steps:
     majorVersion: '0'
     minorVersion: '1'
     patchVersion: '0'
-    verbosityPack: 'Normal'
 
 - task: NuGetCommand@2
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
-    publishFeedCredentials: 'WebApiClient.Extensions.Consul'
-    verbosityPack: 'Normal'
+    publishFeedCredentials: 'Nuget(NXHub)'
