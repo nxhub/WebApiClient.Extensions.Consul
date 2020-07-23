@@ -14,10 +14,6 @@ variables:
 
 steps:
 
-- task: NuGetAuthenticate@0
-  inputs:
-    nuGetServiceConnections: 'Nuget(NXHub)'
-
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
   workingDirectory: 'src'
